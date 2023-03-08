@@ -2,6 +2,8 @@
 
 一块nvme 硬盘的情况 首先ssh连接到群晖dsm，输入sudo -i 切换到管理员模式
 
+```
+
 // 列出所有nvme硬盘
 
 ls /dev/nvme\*n1
@@ -22,7 +24,11 @@ ls /dev/nvme\*n1
 
 存储空间——可用池1——在线重组
 
-2块Nvme硬盘的情况，如何组Raid，比如Raid0
+```
+
+# 2块Nvme硬盘的情况，如何组Raid，比如Raid0
+
+```
 
 //第一步：分别 给 两块nvme的 ssd 分区 synopartition --part /dev/nvme0n1 12 synopartition --part /dev/nvme1n1 12
 
@@ -31,3 +37,5 @@ ls /dev/nvme\*n1
 //第三步：格式化存储池 mkfs.ext4 -F /dev/md6
 
 第四步：重启群晖NAS，并在线重组 存储空间——可用池1——在线重组
+
+```
